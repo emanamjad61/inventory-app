@@ -10,8 +10,6 @@ pipeline {
         APP_REPO_FALLBACK = 'https://github.com/emanamjad61/inventory-app.git'
         TEST_REPO = 'https://github.com/emanamjad61/inventory-tests.git'
         TEST_BRANCH = 'main'
-        COMPOSE_PROJECT_NAME = ''
-        TEST_IMAGE = ''
     }
 
     stages {
