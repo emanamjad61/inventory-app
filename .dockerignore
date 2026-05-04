@@ -1,0 +1,6 @@
+.git
+database.db
+reports
+inventory-tests
+__pycache__
+*.pyc
