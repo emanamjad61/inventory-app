@@ -185,7 +185,7 @@ if __name__ == "__main__":
                 sh '''
                     docker run --rm \
                         --network "${COMPOSE_PROJECT_NAME}_default" \
-                        -e APP_URL=http://app:5000 \
+                        -e APP_URL=http://inventory-web:5000 \
                         -e REPORT_DIR=/reports \
                         -v "$PWD/reports:/reports" \
                         "$TEST_IMAGE" \
