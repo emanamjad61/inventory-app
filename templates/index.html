@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DevOps Inventory App</title>
+    <style>
+        body { font-family: Arial; margin: 40px; }
+        .item { border-bottom: 1px solid #ccc; padding: 10px; }
+        .error { color: red; }
+    </style>
+</head>
+<body>
+    <h1 id="main-title">Inventory Manager</h1>
+    
+    <form action="/add" method="post" id="add-form">
+        <input type="text" name="name" id="item-name" placeholder="Item Name" required>
+        <input type="text" name="description" id="item-desc" placeholder="Description">
+        <button type="submit" id="submit-btn">Add Item</button>
+    </form>
+
+    <div id="item-list">
+        {% for item in items %}
+        <div class="item" id="item-{{ item[0] }}">
+            <strong class="name-display">{{ item[1] }}</strong>: <span class="desc-display">{{ item[2] }}</span>
+            <a href="/delete/{{ item[0] }}" class="delete-link" id="delete-{{ item[0] }}">Delete</a>
+        </div>
+        {% endfor %}
+    </div>
+
+    <footer id="footer">
+        <p>Total Items: <span id="item-count">{{ items|length }}</span></p>
+    </footer>
+</body>
+</html>
